@@ -30,3 +30,27 @@ function calculatorRectangleArea() {
         .getElementById('rectangle-area');
     rectangleAreaSpan.innerText = area;
 }
+
+// reusable function --->
+
+function calculatorParallelogramArea() {
+    const base = getInputValue('parallelogram-base');
+    const height = getInputValue('parallelogram-height');
+
+    const area = base * height;
+    setElementInnerText('parallelogram-area', area);
+
+}
+ 
+function getInputValue(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    const inputValueText = inputField.value;
+
+    const value = parseFloat(inputValueText);
+    return value;
+}
+
+function setElementInnerText(elementId, area) {
+    const element = document.getElementById(elementId);
+    element.innerText = area;
+}
